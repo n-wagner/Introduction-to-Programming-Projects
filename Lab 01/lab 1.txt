@@ -1,0 +1,85 @@
+https://i.gyazo.com/8a5eb94a2a2abbc7d97e323ae2c4ea20.png
+
+#include "library.h"
+
+void main() {
+	const int yearInDays = 365;
+	const int dayInHours = 24;
+	const int hourinMin = 60;
+	const int minInSec = 60;
+	print("One year has ");
+	print(yearInDays * dayInHours * hourinMin * minInSec);
+	print(" seconds.");
+}
+
+
+
+https://i.gyazo.com/870c4abdccf054a6011e94928edba61b.png
+
+
+#include "library.h"
+
+void main() {
+	make_window(400, 400);
+	set_pen_color(color::dark_green);
+	set_pen_width(5);
+	move_to(150, 200);
+	turn_right_by_degrees(18);
+	draw_distance(100);
+	turn_right_by_degrees(144);
+	draw_distance(100);
+	turn_right_by_degrees(144);
+	draw_distance(100);
+	turn_right_by_degrees(144);
+	draw_distance(100);
+	turn_right_by_degrees(144);
+	draw_distance(100);
+}
+
+
+
+https://i.gyazo.com/8540602f343510f7a6a13ea9e63b6d46.png
+
+
+
+#include "library.h"
+
+
+void drawHead(int color, double d) {
+	move_to(200, 200);
+	set_pen_width(10*d);
+	draw_point();
+	set_pen_width(8*d);
+	set_pen_color(color::white);
+	draw_point();
+	set_pen_width(d);
+	set_pen_color(color);
+	turn_right_by_degrees(180);
+	move_relative(0.0, 5*d);
+}
+
+void drawAppendage(double l) {
+	draw_distance(l);
+	turn_right_by_degrees(180);
+	draw_distance(l);
+}
+
+void drawStickFigure(int color, double s) {
+	set_pen_color(color);
+	drawHead(color, s);
+	draw_distance(10*s);
+	turn_right_by_degrees(30);
+	drawAppendage(s*4);
+	turn_right_by_degrees(120);
+	drawAppendage(s*4);
+	turn_right_by_degrees(30);
+	draw_distance(5*s);
+	turn_right_by_degrees(120);
+	drawAppendage(s*4);
+	drawAppendage(s*4);
+}
+
+void main() {
+	make_window(400, 400);
+	drawStickFigure(color::red, 5);
+}
